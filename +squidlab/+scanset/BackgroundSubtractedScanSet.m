@@ -67,7 +67,15 @@ classdef BackgroundSubtractedScanSet < squidlab.scanset.ScanSet
            % Actually perform the background subtraction.
            
            zPoints = this.DataScanSet.ScanData(:, 1, 1);
-           
+
+           %If in Nearest mode, need to make sure there are the same z
+           %points - add a check to give a helpful error message if this is
+           %not the case
+           zPointsBackgr = this.BackgroundScanSet.ScanData(:, 1, 1);
+           if(strcmp(this.InterpolationMode, "nearest"))
+               assert(length(zPoints) == length(zPointsBackgr), "Data and Background ScanSets have unequal numbers of z points (" + string(num2str(length(zPoints))) + " and " + string(num2str(length(zPointsBackgr))) + ") and cannot be directly subtracted with Nearest mode. Try Interp mode instead.");
+           end
+
            % Interpolate the background scans onto the data scans.
            backgroundScanData = this.BackgroundScanSet.getScansAt(...
                this.DataScanSet.Temperatures, zPoints, this.InterpolationMode);

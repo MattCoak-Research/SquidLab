@@ -126,8 +126,17 @@ classdef ObjectInspector < handle
             for i=1:length(this.PropertyList)
                 propertyName = this.PropertyList(i);
                 propertyValue = this.Object.(propertyName);
-                tooltipStrings(end+1,1) = strtrim(string(help(string(...
-                    class(this.Object)) +  "." + propertyName)));
+
+                %No 'help' function in deployed code, handle this and
+                %branch the code here
+                if isdeployed
+                    %This could be improved..
+                    tooltipStrings(end+1,1) = strtrim((string(class(this.Object)) +  "." + propertyName));
+                else
+                    %#exclude help
+                    tooltipStrings(end+1,1) = strtrim(string(help(string(...
+                        class(this.Object)) +  "." + propertyName)));
+                end
                 
                 y = containerHeight - i * (this.WidgetHeight + 2*this.Margin(2)) + this.Margin(2);
                 pos = [labelX + this.Margin(1) y labelWidth this.WidgetHeight];

@@ -125,7 +125,7 @@ classdef S700X_Raw < squidlab.import.ImportPipeline
         
         function dataArray = ReadRawFile(obj, filePath)
             % Open the file
-            fileID = fopen("Sn.dat");
+            fileID = fopen(filePath);
             
             %% Properties for reading the file
             size = [inf];

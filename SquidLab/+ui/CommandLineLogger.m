@@ -11,7 +11,7 @@
 %And remember, we can't guarantee that the software is bug or error free! Make sure to check any results.
 %---------------------------------------------------------------------------------------------------------
 
-classdef CommandLineLogger < squidback.utils.Logger
+classdef CommandLineLogger < squidlab.utils.Logger
     
     methods(Access = protected)
         function doLog(this, fraction, varargin)

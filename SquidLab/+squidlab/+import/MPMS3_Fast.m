@@ -221,20 +221,20 @@ function s = iSomeRanges1000Warning()
 s = "Some, but not all, 'squid range' values are reported as 1000. This can be due to a bug in MultiVu. Consider checking that 'squid range' correspond in the data file and the raw file. If they differ, use the scaleFactor argument to compensate.";
 end
 
-function scanResults = iReshapeScanData(scanData, numPointsPerScan, numScans)
-% Reshape the [NumScans*ZPointsPerScan x 2] array into a
-% [ZPointsPerScan x 2 x NumScans] array. For every scan, rescale
-% by the appropriate factor for range and rescaleFactor.
-%
-% It's surely possible to do this with reshape + permute, and
-% that's probably faster.
-
-scanResults = zeros(numPointsPerScan, 2, numScans);
-for i=1:numScans
-    idx = (1 + (i-1)*numPointsPerScan):(i*numPointsPerScan);
-    scanResults(:,:,i) = scanData(idx, :);
-    
-    % Take into account the range.
-    scanResults(:,2,i) = scanResults(:,2,i) * range(i) * rescaleFactor;
-end
-end
+% function scanResults = iReshapeScanData(scanData, numPointsPerScan, numScans)
+% % Reshape the [NumScans*ZPointsPerScan x 2] array into a
+% % [ZPointsPerScan x 2 x NumScans] array. For every scan, rescale
+% % by the appropriate factor for range and rescaleFactor.
+% %
+% % It's surely possible to do this with reshape + permute, and
+% % that's probably faster.
+% 
+% scanResults = zeros(numPointsPerScan, 2, numScans);
+% for i=1:numScans
+%     idx = (1 + (i-1)*numPointsPerScan):(i*numPointsPerScan);
+%     scanResults(:,:,i) = scanData(idx, :);
+% 
+%     % Take into account the range.
+%     scanResults(:,2,i) = scanResults(:,2,i) * range(i) * rescaleFactor;
+% end
+%end

@@ -22,7 +22,7 @@ opts.SupportedPlatforms.Win64 = true;
 opts.SupportedPlatforms.Mac = true;
 opts.SupportedPlatforms.Glnxa64 = true;
 opts.SupportedPlatforms.MatlabOnline = true;
-opts.ToolboxGettingStartedGuide = fullfile(projectRoot, "SquidLabManual.mlx"); 
+opts.ToolboxGettingStartedGuide = fullfile(projectRoot, "SquidLab", "doc", "SquidLabManual.mlx"); 
 opts.ToolboxVersion = "2.9.5";
 
 %Build the .mltbx toolbox installation file
@@ -87,7 +87,7 @@ packageOpts = compiler.package.InstallerOptions(buildResult);
 packageOpts.ApplicationName = "SquidLab";
 packageOpts.AuthorName = "Matthew Coak";
 packageOpts.AuthorCompany = "University of Birmingham";
-packageOpts.InstallerIcon = fullfile(projectRoot, "SquidLabLogo.png");
+packageOpts.InstallerIcon = fullfile(projectRoot, "SquidLab", "SquidLabLogo.png");
 packageOpts.InstallerSplash = "splash.png";
 packageOpts.OutputDir = packageDir;
 packageOpts.Version = verString;
@@ -171,12 +171,12 @@ verString = "2.9.5";
 %of. Add those in here. Instrument files and dynamically loaded Views are
 %good examples.
 additionalFiles = GetAdditionalFilesFromFolders([...,
-    fullfile("+SquidLab", "+fit"),...
-    fullfile("+SquidLab", "+import"),...
-    fullfile("+SquidLab", "+postprocess"),...
-    fullfile("+SquidLab", "+scanset"),...
-    fullfile("+SquidLab", "+utils"),...
-    fullfile("+ui")
+    fullfile("SquidLab", "+SquidLab", "+fit"),...
+    fullfile("SquidLab", "+SquidLab", "+import"),...
+    fullfile("SquidLab", "+SquidLab", "+postprocess"),...
+    fullfile("SquidLab", "+SquidLab", "+scanset"),...
+    fullfile("SquidLab", "+SquidLab", "+utils"),...
+    fullfile("SquidLab", "+ui")
     ]);
 
 %additionalFiles = RemoveAdditionalFiles(additionalFiles, [...
@@ -188,7 +188,7 @@ buildOpts = compiler.build.StandaloneApplicationOptions(fullfile(projectRoot, "m
 buildOpts.AdditionalFiles = additionalFiles;
 buildOpts.AutoDetectDataFiles = true;
 buildOpts.EmbedArchive = true;
-buildOpts.ExecutableIcon = fullfile(projectRoot, "SquidLabLogo.png");
+buildOpts.ExecutableIcon = fullfile(projectRoot, "SquidLab", "SquidLabLogo.png");
 buildOpts.ExecutableSplashScreen = fullfile(projectRoot, "splash.png");
 buildOpts.ExecutableVersion = verString;
 buildOpts.ObfuscateArchive = false;

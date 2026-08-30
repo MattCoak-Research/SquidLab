@@ -1,2 +1,626 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project MetadataType="monolithic"/>
+<project MetadataType="monolithic">
+    <Info Location="ProjectData">
+        <Info Name="SquidLab"/>
+    </Info>
+    <Files Location="Root">
+        <File Location=".gitattributes">
+            <Info/>
+        </File>
+        <File Location=".gitignore">
+            <Info/>
+        </File>
+        <File Location="Academic-Use-Licence-Warwick-Cambridge-SquidLab-Nov2019.pdf">
+            <Info>
+                <Category UUID="FileClassCategory">
+                    <Label UUID="artifact"/>
+                </Category>
+            </Info>
+        </File>
+        <File Location="Example Data">
+            <Info/>
+            <DIR_SIGNIFIER Location="1">
+                <Info/>
+            </DIR_SIGNIFIER>
+            <File Location="MvH Background.rw.dat">
+                <Info/>
+            </File>
+            <File Location="MvH RawData.rw.dat">
+                <Info/>
+            </File>
+            <File Location="MvT Background.rw.dat">
+                <Info/>
+            </File>
+            <File Location="MvT RawData.rw.dat">
+                <Info/>
+            </File>
+        </File>
+        <File Location="README.md">
+            <Info/>
+        </File>
+        <File Location="buildfile.m">
+            <Info>
+                <Category UUID="FileClassCategory">
+                    <Label UUID="design"/>
+                </Category>
+            </Info>
+        </File>
+        <File Location="main.m">
+            <Info>
+                <Category UUID="FileClassCategory">
+                    <Label UUID="design"/>
+                </Category>
+            </Info>
+        </File>
+        <File Location="splash.png">
+            <Info/>
+        </File>
+        <File Location="toolbox.ignore">
+            <Info/>
+        </File>
+        <File Location="SquidLab">
+            <Info/>
+            <DIR_SIGNIFIER Location="1">
+                <Info/>
+            </DIR_SIGNIFIER>
+            <File Location="+ui">
+                <Info/>
+                <DIR_SIGNIFIER Location="1">
+                    <Info/>
+                </DIR_SIGNIFIER>
+                <File Location="CommandLineLogger.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+                <File Location="ErrorHandler.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+                <File Location="Logger.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+                <File Location="ObjectInspector.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+                <File Location="fromString.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+            </File>
+            <File Location="+squidlab">
+                <Info/>
+                <DIR_SIGNIFIER Location="1">
+                    <Info/>
+                </DIR_SIGNIFIER>
+                <File Location="+fit">
+                    <Info/>
+                    <DIR_SIGNIFIER Location="1">
+                        <Info/>
+                    </DIR_SIGNIFIER>
+                    <File Location="BasisSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="DipoleBasisSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="EnhancedSVDFit.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="Fit.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="LevenbergMarquadtFit.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="SVDFit.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="dipoleEquation.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="dipoleEquationFixedCentre.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="driftingDipoleEquation.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="driftingDipoleEquationFixedCentre.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                </File>
+                <File Location="+import">
+                    <Info/>
+                    <DIR_SIGNIFIER Location="1">
+                        <Info/>
+                    </DIR_SIGNIFIER>
+                    <File Location="ImportPipeline.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="LineReadingImportPipeline.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS3.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS3_Alt.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS3_Fast.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS3_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS3_MvH_Alt.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMSXL.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMSXL_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMSXL_RSO.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMSXL_RSO_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS_IQuantum.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="MPMS_IQuantum_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="S700X.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="S700X_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="S700X_Raw.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="S700X_Raw_MvH.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                </File>
+                <File Location="+postprocess">
+                    <Info/>
+                    <DIR_SIGNIFIER Location="1">
+                        <Info/>
+                    </DIR_SIGNIFIER>
+                    <File Location="AverageUpDown.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="Centre.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="FitReplace.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="LinearDriftSubtract.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="PostProcessPipe.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="Shift.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="SimpleSmooth.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="TDependent_Shift.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="TrimZ.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                </File>
+                <File Location="+scanset">
+                    <Info/>
+                    <DIR_SIGNIFIER Location="1">
+                        <Info/>
+                    </DIR_SIGNIFIER>
+                    <File Location="BackgroundSubtractedScanSet.asv">
+                        <Info/>
+                    </File>
+                    <File Location="BackgroundSubtractedScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="FitScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="LevenbergMarquadtFitScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="PostProcessedScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="RawScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="SVDFitScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="ScanPlotter.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="ScanSet.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                </File>
+                <File Location="+utils">
+                    <Info/>
+                    <DIR_SIGNIFIER Location="1">
+                        <Info/>
+                    </DIR_SIGNIFIER>
+                    <File Location="CommandLineLogger.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="Logger.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="NoOpLogger.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="UILogger.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="rescaleFromFile.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                    <File Location="scans2interpolant.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
+                </File>
+                <File Location="Actions.m">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="design"/>
+                        </Category>
+                    </Info>
+                </File>
+            </File>
+            <File Location="toolbox.ignore">
+                <Info/>
+            </File>
+            <File Location="SquidLab.mlapp">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+            <File Location="SquidLabLogo.jpg">
+                <Info/>
+            </File>
+            <File Location="doc">
+                <Info/>
+                <DIR_SIGNIFIER Location="1">
+                    <Info/>
+                </DIR_SIGNIFIER>
+                <File Location="SquidLab Changelog.pdf">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="artifact"/>
+                        </Category>
+                    </Info>
+                </File>
+                <File Location="SquidLabManual.pdf">
+                    <Info>
+                        <Category UUID="FileClassCategory">
+                            <Label UUID="artifact"/>
+                        </Category>
+                    </Info>
+                </File>
+            </File>
+            <File Location="SquidLabLogo.png">
+                <Info/>
+            </File>
+        </File>
+    </Files>
+    <Categories Location="Root">
+        <Category Location="FileClassCategory">
+            <Info DataType="None" Name="Classification" ReadOnly="1" SingleValued="1"/>
+            <Label Location="design">
+                <Info Name="Design" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="derived">
+                <Info Name="Derived" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="artifact">
+                <Info Name="Artifact" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="convenience">
+                <Info Name="Convenience" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="other">
+                <Info Name="Other" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="test">
+                <Info Name="Test" ReadOnly="READ_ONLY"/>
+            </Label>
+            <Label Location="none">
+                <Info Name="None" ReadOnly="READ_ONLY"/>
+            </Label>
+        </Category>
+        <Category Location="Deployment_Category_7be696b0-5bb2-4a3f-97bd-2cdd0518c204">
+            <Info DataType="None" Name="Toolbox - Toolbox1" ReadOnly="0" SingleValued="0"/>
+            <Label Location="Deployment_ToolboxImageFile_7be696b0-5bb2-4a3f-97bd-2cdd0518c204">
+                <Info Name="Toolbox Image File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_ToolboxAppGalleryFiles_7be696b0-5bb2-4a3f-97bd-2cdd0518c204">
+                <Info Name="App Gallery File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_GettingStartedGuideFile_7be696b0-5bb2-4a3f-97bd-2cdd0518c204">
+                <Info Name="Getting Started Guide" ReadOnly="WRITABLE"/>
+            </Label>
+        </Category>
+        <Category Location="Deployment_Category_75e853df-8e82-43d0-aac5-3bdf70b88348">
+            <Info DataType="None" Name="Toolbox - Toolbox1 (1)" ReadOnly="0" SingleValued="0"/>
+            <Label Location="Deployment_ToolboxImageFile_75e853df-8e82-43d0-aac5-3bdf70b88348">
+                <Info Name="Toolbox Image File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_ToolboxAppGalleryFiles_75e853df-8e82-43d0-aac5-3bdf70b88348">
+                <Info Name="App Gallery File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_GettingStartedGuideFile_75e853df-8e82-43d0-aac5-3bdf70b88348">
+                <Info Name="Getting Started Guide" ReadOnly="WRITABLE"/>
+            </Label>
+        </Category>
+        <Category Location="Deployment_Category_d8784dbe-a7e8-4b53-9928-7d21e39dd987">
+            <Info DataType="None" Name="Toolbox - Toolbox1 (2)" ReadOnly="0" SingleValued="0"/>
+            <Label Location="Deployment_ToolboxImageFile_d8784dbe-a7e8-4b53-9928-7d21e39dd987">
+                <Info Name="Toolbox Image File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_ToolboxAppGalleryFiles_d8784dbe-a7e8-4b53-9928-7d21e39dd987">
+                <Info Name="App Gallery File" ReadOnly="WRITABLE"/>
+            </Label>
+            <Label Location="Deployment_GettingStartedGuideFile_d8784dbe-a7e8-4b53-9928-7d21e39dd987">
+                <Info Name="Getting Started Guide" ReadOnly="WRITABLE"/>
+            </Label>
+        </Category>
+    </Categories>
+    <ProjectPath Location="Root">
+        <Reference Location="6fd73fb1-980b-499e-b8a3-9ddb69e025b4">
+            <Info Ref="" Type="Relative"/>
+        </Reference>
+        <Reference Location="4629c578-a953-4669-b4e0-9bf2f85821b5">
+            <Info Ref="SquidLab" Type="Relative"/>
+        </Reference>
+        <Reference Location="e99de607-1e48-4da1-acea-1ec0f10ca1dd">
+            <Info Ref="SquidLab/doc" Type="Relative"/>
+        </Reference>
+    </ProjectPath>
+    <Files Location="MathWorksDeploymentConfigs">
+        <DIR_SIGNIFIER Location="1">
+            <Info/>
+        </DIR_SIGNIFIER>
+        <Info configMapData="{&quot;Toolbox1&quot;:&quot;MathWorksDeploymentConfig{3b59c182-afb5-4808-86c3-b047b6a82cf2}&quot;}"/>
+    </Files>
+    <Files Location="MathWorksDeploymentConfig{3b59c182-afb5-4808-86c3-b047b6a82cf2}">
+        <DIR_SIGNIFIER Location="1">
+            <Info/>
+        </DIR_SIGNIFIER>
+        <Info ToolboxConfigModel="{&quot;entries&quot;:[{&quot;content&quot;:{&quot;appGalleryLabel&quot;:{&quot;content&quot;:{&quot;categoryID&quot;:&quot;Deployment_Category_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;,&quot;labelID&quot;:&quot;Deployment_ToolboxAppGalleryFiles_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;},&quot;type&quot;:&quot;deployment.toolbox.model.ProjectLabel&quot;,&quot;uuid&quot;:&quot;32cce62d-e61d-4222-81e1-9299b9a1c350&quot;},&quot;gettingStartedGuideLabel&quot;:{&quot;content&quot;:{&quot;categoryID&quot;:&quot;Deployment_Category_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;,&quot;labelID&quot;:&quot;Deployment_GettingStartedGuideFile_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;},&quot;type&quot;:&quot;deployment.toolbox.model.ProjectLabel&quot;,&quot;uuid&quot;:&quot;acff9ac0-16d6-4ecb-9274-e30e85cf815e&quot;},&quot;outputFileName&quot;:&quot;MyToolbox.mltbx&quot;,&quot;outputFolder&quot;:&quot;Toolbox1\\release&quot;,&quot;supportedPlatforms&quot;:[&quot;Windows&quot;,&quot;Linux&quot;,&quot;Mac&quot;,&quot;MatlabOnline&quot;],&quot;toolboxFolder&quot;:&quot;SquidLab&quot;,&quot;toolboxImgLabel&quot;:{&quot;content&quot;:{&quot;categoryID&quot;:&quot;Deployment_Category_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;,&quot;labelID&quot;:&quot;Deployment_ToolboxImageFile_d8784dbe-a7e8-4b53-9928-7d21e39dd987&quot;},&quot;type&quot;:&quot;deployment.toolbox.model.ProjectLabel&quot;,&quot;uuid&quot;:&quot;bc0c01b5-054d-4f4a-a148-03a55b2a3333&quot;},&quot;toolboxName&quot;:&quot;SquidLab&quot;,&quot;toolboxVersion&quot;:&quot;1.0.0&quot;,&quot;uniqueId&quot;:&quot;6c7b1863-ab69-43c5-bc49-6e79813dcb0d&quot;},&quot;type&quot;:&quot;deployment.toolbox.model.ToolboxConfiguration&quot;,&quot;uuid&quot;:&quot;ea2c7441-4dce-4077-94df-3287beb7833d&quot;},{&quot;content&quot;:{},&quot;type&quot;:&quot;deployment.toolbox.model.ProjectStateValidationIssueList&quot;,&quot;uuid&quot;:&quot;67c1a0bb-7e8a-4375-8f53-aea5f6ab8cae&quot;}],&quot;packageUris&quot;:[&quot;http://schema.mathworks.com/mf0/deployment_toolbox_model/1.0.0&quot;],&quot;version&quot;:&quot;1.0&quot;}" displayName="Toolbox1" lastAccessed="1788119350905" type="Toolbox" uniqueId="d8784dbe-a7e8-4b53-9928-7d21e39dd987"/>
+    </Files>
+</project>

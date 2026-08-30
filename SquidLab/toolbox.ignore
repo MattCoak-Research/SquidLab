@@ -36,9 +36,3 @@
 % Local MATLAB/Simulink tool caches
 **/slprj
 **/.buildtool/
-
-% Project resources folder
-resources/
-
-% Release folder
-Release

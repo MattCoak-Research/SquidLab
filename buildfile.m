@@ -124,21 +124,21 @@ compiler.runtime.download;
 %Make installer with runtime bundled
 packageOpts.RuntimeDelivery = "installer";
 packageOpts.OutputDir = fullfile(directory, "Runtime Bundled");
-packageOpts.InstallerName = "SquidLab Installer - Runtime Bundled";
+packageOpts.InstallerName = "SquidLab_Installer-Runtime_Bundled";
 compiler.package.installer(buildResult, "Options", packageOpts);
 
 
 %Make Web installer
 packageOpts.RuntimeDelivery = "web";
 packageOpts.OutputDir = fullfile(directory, "Runtime Web Installer");
-packageOpts.InstallerName = "SquidLab Installer - Runtime Web Installer";
+packageOpts.InstallerName = "SquidLab_Installer-Runtime_Web_Installer";
 compiler.package.installer(buildResult, "Options", packageOpts);
 
 
 %Make installer without runtime included
 packageOpts.RuntimeDelivery = "none";
 packageOpts.OutputDir = fullfile(directory, "No Runtime");
-packageOpts.InstallerName = "SquidLab Installer - No Runtime";
+packageOpts.InstallerName = "SquidLab_Installer-No_Runtime";
 compiler.package.installer(buildResult, "Options", packageOpts);
 
 end

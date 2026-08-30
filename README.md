@@ -1,4 +1,4 @@
-**A user-friendly program for background subtraction and fitting of magnetization data**
+# SquidLab - A user-friendly program for background subtraction and fitting of magnetization data
 
 SquidLab is an open-source program free to download for academic use with a full user-friendly graphical interface for performing flexible and robust background subtraction and dipole fitting on magnetization data.
 
@@ -8,6 +8,19 @@ The software allows background subtraction of baseline signals, signal preproces
 
 A full description can be found in [Matthew Coak et al., Review of Scientific Instruments 91, 023901 (2020)](https://doi.org/10.1063/1.5137820), and in the accompanying [SciLight article](https://doi.org/10.1063/10.0000720) for a general audience.
 
-See the manual for setup instructions (just download the files and add to your MATLAB path then type 'SquidLab;' in the MATLAB command window and hit enter) or click below to **run SquidLab in your browser using MATLAB online**:
+# Documentation
 
+Click here to download the [manual](SquidLabManual.pdf). The installation comes with Example Data, which the manual talks through the steps of analysing.
+
+
+## Installation
+There are 
+
+#### MATLAB Online
+Click below to run SquidLab in your browser using MATLAB online (login required):
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MattCoak-Research/SquidLab&file=SquidLab.mlapp&focus=true)
+
+#### Toolbox installation
+
+SquidLab can be installed within MATLAB, by searching for it in the list of AddOns:
+for setup instructions (just download the files and add to your MATLAB path then type 'SquidLab;' in the MATLAB command window and hit enter) or click below to 

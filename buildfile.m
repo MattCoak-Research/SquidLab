@@ -22,8 +22,8 @@ opts.SupportedPlatforms.Win64 = true;
 opts.SupportedPlatforms.Mac = true;
 opts.SupportedPlatforms.Glnxa64 = true;
 opts.SupportedPlatforms.MatlabOnline = true;
-opts.ToolboxGettingStartedGuide = fullfile(projectRoot, "SquidLabManual.pdf"); 
-opts.ToolboxVersion = "2.9.4";
+opts.ToolboxGettingStartedGuide = fullfile(projectRoot, "SquidLabManual.mlx"); 
+opts.ToolboxVersion = "2.9.5";
 
 %Build the .mltbx toolbox installation file
 matlab.addons.toolbox.packageToolbox(opts);
@@ -64,11 +64,10 @@ if exist(packageDir, "dir")
 end
 
 %Retrieve version
-verStruct = Palladium.ver();
-verString = string(verStruct.VersionString);
+verString = "2.9.5";
 
 %Set build options
-buildOpts = AssembleBuildOptions(verString, projectRoot);
+buildOpts = AssembleBuildOptions(projectRoot);
 buildOpts.ExecutableName = "SquidLab";
 buildOpts.OutputDir = exeDir;
 
@@ -85,10 +84,10 @@ end
 
 % Create package options object, set package properties and package.
 packageOpts = compiler.package.InstallerOptions(buildResult);
-packageOpts.ApplicationName = "Palladium DAQ";
+packageOpts.ApplicationName = "SquidLab";
 packageOpts.AuthorName = "Matthew Coak";
 packageOpts.AuthorCompany = "University of Birmingham";
-packageOpts.InstallerIcon = fullfile(projectRoot, "SquidLabLogo.jpg");
+packageOpts.InstallerIcon = fullfile(projectRoot, "SquidLabLogo.png");
 packageOpts.InstallerSplash = "splash.png";
 packageOpts.OutputDir = packageDir;
 packageOpts.Version = verString;
@@ -166,13 +165,19 @@ end
 
 function buildOpts = AssembleBuildOptions(projectRoot)
 
-verString = "2.9.4";
+verString = "2.9.5";
 
 %The compiler excludes any code files it doesn't find an explicit mention
 %of. Add those in here. Instrument files and dynamically loaded Views are
 %good examples.
-%additionalFiles = GetAdditionalFilesFromFolders([...,...
- %   fullfile("Palladium DAQ", "+Palladium", "+Components")]);
+additionalFiles = GetAdditionalFilesFromFolders([...,
+    fullfile("+SquidLab", "+fit"),...
+    fullfile("+SquidLab", "+import"),...
+    fullfile("+SquidLab", "+postprocess"),...
+    fullfile("+SquidLab", "+scanset"),...
+    fullfile("+SquidLab", "+utils"),...
+    fullfile("+ui")
+    ]);
 
 %additionalFiles = RemoveAdditionalFiles(additionalFiles, [...
   %  fullfile("Palladium DAQ", "+Palladium", "+Instruments", "TestInstrument.m")...
@@ -180,10 +185,10 @@ verString = "2.9.4";
 
 %Set build options
 buildOpts = compiler.build.StandaloneApplicationOptions(fullfile(projectRoot, "main.m"));
-%buildOpts.AdditionalFiles = additionalFiles;
+buildOpts.AdditionalFiles = additionalFiles;
 buildOpts.AutoDetectDataFiles = true;
 buildOpts.EmbedArchive = true;
-buildOpts.ExecutableIcon = fullfile(projectRoot, "SquidLabLogo.jpg");
+buildOpts.ExecutableIcon = fullfile(projectRoot, "SquidLabLogo.png");
 buildOpts.ExecutableSplashScreen = fullfile(projectRoot, "splash.png");
 buildOpts.ExecutableVersion = verString;
 buildOpts.ObfuscateArchive = false;

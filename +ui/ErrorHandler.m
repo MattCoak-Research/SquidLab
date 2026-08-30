@@ -3,7 +3,7 @@ classdef ErrorHandler
     %installation, toolboxes etc
     
     properties (Constant)       
-       DebugMode = true;   %Set to true to rethrow all handled errors and hence have a stack trace to follow in the command window - for debugging/testing purposes 
+       DebugMode = false;   %Set to true to rethrow all handled errors and hence have a stack trace to follow in the command window - for debugging/testing purposes 
     end
     
     methods (Static)

@@ -19,10 +19,12 @@ A full description can be found in [Matthew Coak et al., Review of Scientific In
 ## Documentation
 Click here to download the [manual](SquidLabManual.pdf). The installation comes with Example Data, which the manual talks through the steps of analysing.
 
-Note that in addition to the Graphical User Interface provided, SquidLab comes with two levels of API for batch scripting or more bespoke data processing if required. The manual has some examples, and if you have any issues or questions you are encouraged to contact m.j.coak@bham.ac.uk.
+> [!TIP]
+> Note that in addition to the Graphical User Interface provided, SquidLab comes with two levels of API for batch scripting or more bespoke data processing if required. The manual has some examples, and if you have any issues or questions you are encouraged to contact m.j.coak@bham.ac.uk.
+
 
 ## Installation
-There are multiple options for installing and running SquidLab, both with or without a MATLAB licence, listed roughly easiest-first within either below. The manual has some more details on the open source install, and if you experience any issues you are encouraged to contact m.j.coak@bham.ac.uk.
+There are multiple options below for installing and running SquidLab, both with or without a MATLAB licence, listed roughly easiest-first for each. If you experience any issues you are encouraged to contact m.j.coak@bham.ac.uk.
 
 - - - -
 
@@ -38,13 +40,17 @@ SquidLab can be installed within MATLAB (and will be updated automatically), by 
 
 <img width="369" height="240" alt="image" src="https://github.com/user-attachments/assets/6e318fe6-8550-4c52-85bb-dba7cfc64cfd" />
 
+
 Alternatively, download the [toolbox file](Release/Toolbox/SquidLab.mltbx) and run it (will open MATLAB). 
 
 After either installation, type 'SquidLab;' in the MATLAB command window and hit enter to run. Note that Toolbox installation essentially just copies the source code to a local folder managed by MATLAB; this can be viewed and edited by choosing 'Add-Ons -> Manage Add-Ons', finding SquidLab, expanding the ... button and browsing files. This means the Toolbox version can be edited and extended by the user, open source. The manual explains how new plugins and importers can be created.
 
 #### Source code download
 
-Note that Toolbox installation essentially does this, as noted above. To install, download the source code above, add to your MATLAB path then type 'SquidLab;' in the MATLAB command window and hit enter (manual has more details).
+> [!TIP]
+> Note that Toolbox installation essentially does this, as noted above. 
+
+To install, download the source code above, add to your MATLAB path then type 'SquidLab;' in the MATLAB command window and hit enter (manual has more details).
 
 - - - -
 

@@ -76,6 +76,8 @@ classdef PostProcessedScanSet < squidlab.scanset.ScanSet
         % then trim the outer edges of teh data where this happens and keep
         % the centre only.
         TDepShift = [0 0];
+
+        RemoveZeroes logical = false;
     end
     
     properties(Hidden)        
@@ -108,7 +110,8 @@ classdef PostProcessedScanSet < squidlab.scanset.ScanSet
             'LinearDriftSubtract', {'DriftSubtractionRange'},...
             'FitReplace', {'FitMethod'},...
             'Shift', {'ShiftZ'},...
-            'TDependent_Shift', {'TDepShift'}};
+            'TDependent_Shift', {'TDepShift'},...
+            'RemoveZeroes' {'RemoveZeroes'}};
         
         % CustomPipelineDefinition (cell vector)
         % %%% For advanced users only. %%%

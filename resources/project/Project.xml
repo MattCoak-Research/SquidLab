@@ -378,6 +378,13 @@
                             </Category>
                         </Info>
                     </File>
+                    <File Location="RemoveZeroes.m">
+                        <Info>
+                            <Category UUID="FileClassCategory">
+                                <Label UUID="design"/>
+                            </Category>
+                        </Info>
+                    </File>
                 </File>
                 <File Location="+scanset">
                     <Info/>

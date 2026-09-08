@@ -544,6 +544,19 @@
                 <Info/>
             </File>
         </File>
+        <File Location="Scripting Examples">
+            <Info/>
+            <DIR_SIGNIFIER Location="1">
+                <Info/>
+            </DIR_SIGNIFIER>
+            <File Location="SquidLabLoopExample.m">
+                <Info>
+                    <Category UUID="FileClassCategory">
+                        <Label UUID="design"/>
+                    </Category>
+                </Info>
+            </File>
+        </File>
     </Files>
     <Categories Location="Root">
         <Category Location="FileClassCategory">
@@ -616,6 +629,9 @@
         </Reference>
         <Reference Location="e99de607-1e48-4da1-acea-1ec0f10ca1dd">
             <Info Ref="SquidLab/doc" Type="Relative"/>
+        </Reference>
+        <Reference Location="3f392a47-82bf-4596-b04b-44f79e29fbed">
+            <Info Ref="Scripting Examples" Type="Relative"/>
         </Reference>
     </ProjectPath>
     <Files Location="MathWorksDeploymentConfigs">

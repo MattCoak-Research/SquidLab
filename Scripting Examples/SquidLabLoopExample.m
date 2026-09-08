@@ -28,7 +28,7 @@ for zShift = -2 : 0.4 : 2
     ppDataShifted = actions.postProcess(ppData, 'ShiftZ', zShift);
 
     %Subtract background
-    backsubScanSets = actions.subtractBackground(ppDataShifted, ppBackground);
+    backsubScanSet = actions.subtractBackground(ppDataShifted, ppBackground);
 
     %Plot only the first point (base temperature by default) of the scan
     backsubScanSet.UseScanRange(1,1);

@@ -17,11 +17,12 @@ A full description can be found in [Matthew Coak et al., Review of Scientific In
 
 
 ## Documentation
-Click here to download the [manual](SquidLab/doc/SquidLabManual.pdf). The installation comes with Example Data, which the manual talks through the steps of analysing.
+Click here to download the [Manual](SquidLab/doc/SquidLabManual.pdf). The installation comes with Example Data, which the manual talks through the steps of analysing.
 
 > [!TIP]
 > Note that in addition to the Graphical User Interface provided, SquidLab comes with two levels of API for batch scripting or more bespoke data processing if required. The manual has some examples, and if you have any issues or questions you are encouraged to contact m.j.coak@bham.ac.uk.
 
+Click here to download the [Changelog](SquidLab/doc/SquidLab%20Changelog.pdf).
 
 ## Installation
 There are multiple options below for installing and running SquidLab, both with or without a MATLAB licence, listed roughly easiest-first for each. If you experience any issues you are encouraged to contact m.j.coak@bham.ac.uk.

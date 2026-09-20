@@ -148,14 +148,24 @@ classdef SVDFitScanSet < squidlab.scanset.FitScanSet
             % we have one more parameter than we have multipoles.
             this.FitParameters = nan(size(data, 3), this.MultipoleOrder + 1);
             this.FittedScanData = data;
-            
+
+            %Process string log
+            processStrLog = "<Fit - SVD>";
+            processStrLog = processStrLog + newline + "Order: " + string(this.MultipoleOrder);
+
             % Perform fit.
             for i=1:size(data, 3)
                 scan = data(:,:,i);
                 [this.FitParameters(i,:), this.FittedScanData(:,2,i)]...
                     = fitter.fit(scan, basisVectors);
             end
-            
+
+            % Record the processing history in the metadata.
+            if ~isfield(this.Meta, "History")
+                this.Meta.History = processStrLog;                
+            else
+                this.Meta.History(end + 1) = processStrLog;
+            end
         end
     end
     

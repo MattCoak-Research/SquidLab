@@ -232,11 +232,16 @@ classdef PostProcessedScanSet < squidlab.scanset.ScanSet
             % Get full pipeline definition, including custom ones user has
             % added.
             pipelineDefinition = this.getFullPipeLine();
+
+            %Process string log
+            processStrLog = "<Post Process>";
             
             % Do processing.
             for i=1:2:length(pipelineDefinition)
-                [scans, temperatures] = this.doPipeProcess(pipelineDefinition{i}, pipelineDefinition{i+1}, scans, temperatures);
+                [scans, temperatures, metaDataString] = this.doPipeProcess(pipelineDefinition{i}, pipelineDefinition{i+1}, scans, temperatures);
                 
+                processStrLog = processStrLog + newline + metaDataString;
+
                 if this.DebugPipeline
                     fprintf("After pipe %i (%s) scan size is [%ix%ix%i].\n", ...
                         (i+1)/2,pipelineDefinition{i}, size(scans, 1),...
@@ -246,7 +251,14 @@ classdef PostProcessedScanSet < squidlab.scanset.ScanSet
             
             % Store results.
             this.ScanData = scans;
-            this.Temperatures = temperatures;           
+            this.Temperatures = temperatures;     
+
+            % Record the processing history in the metadata.
+            if ~isfield(this.Meta, "History")
+                this.Meta.History = processStrLog;                
+            else
+                this.Meta.History(end + 1) = processStrLog;
+            end
         end
         
     end
@@ -262,25 +274,32 @@ classdef PostProcessedScanSet < squidlab.scanset.ScanSet
             pipelineDefinition = [this.PipelineDefinition this.CustomPipelineDefinition];
         end
         
-        function [scans, temperatures] = doPipeProcess(this, pipeName, pipeParams, scans, temperatures)
+        function [scans, temperatures, metaDataString] = doPipeProcess(this, pipeName, pipeParams, scans, temperatures)
             % Does processing for a single pipe.
             %
             % This involves constructing the right pipe, giving it the
             % right arguments (which may involve looking up the value of
             % those arguments from the properties of this), and calling
             % pipe.process.
-            
+            paramsString = "";
             % Replace any params that refer to a property of this with their
             % value.
             for i=1:length(pipeParams)
                 if isprop(this, pipeParams{i})
                     pipeParams{i} = this.(pipeParams{i});
+
+                    %Get a string form of the param and add it to a single
+                    %collated string, for later looking up metadata of what
+                    %happened to this scanset at each step
+                    paramsString = paramsString + " " + strjoin(string(pipeParams{i}), " ");
                 end
             end
             
             % Construct this pipe and process with it.
             pipe = squidlab.postprocess.(pipeName)();
             [scans, temperatures] = pipe.process(scans, temperatures, pipeParams{:});
+
+            metaDataString = string(pipeName) + " : " + paramsString;            
         end
     end
     

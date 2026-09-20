@@ -84,6 +84,10 @@ classdef(Abstract) ScanSet < handle
         %used to be stored centrally in the application, but in v2.9 it's
         %moved to be here, per-scan, instead.
         Meta;
+
+        %Name of the ScanSet, as shown in the GUI (and set by it shortly
+        %after it is added there)
+        Name = "ScanSet";
     end
     
     properties(SetAccess = protected)
@@ -252,6 +256,33 @@ classdef(Abstract) ScanSet < handle
            
            backgroundSubtractedScans = squidlab.scanset.BackgroundSubtractedScanSet(this, backgroundScanSet, mode);
         end
+
+        function DisplayHistory(this, textAreaParent)
+            arguments
+                this
+                textAreaParent = [];%Will print to console if this is blank
+            end
+    
+            if ~isfield(this.Meta, "History") || isempty(this.Meta.History)
+                warndlg("No History for this scanset");
+                return;
+            end
+
+
+            if isempty(textAreaParent)
+                %Just print to console
+                for i = 1 : length(this.Meta.History)
+                    disp(this.Meta.History(i));
+                end
+            else
+                txt = string(this.Meta.History(1));
+                for i = 2 : length(this.Meta.History)
+                    txt = txt + newline + newline + string(this.Meta.History(i));
+                end
+                textAreaParent.Value = txt;
+            end
+        end
+
     end
     
     % Getters and setters

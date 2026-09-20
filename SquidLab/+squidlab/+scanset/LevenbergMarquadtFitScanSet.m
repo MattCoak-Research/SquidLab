@@ -153,7 +153,11 @@ classdef LevenbergMarquadtFitScanSet < squidlab.scanset.FitScanSet
             % Pre-alloc arrays.
             this.FitParameters = nan(size(data, 3), 4);
             this.FittedScanData = data;
-            
+
+            %Process string log
+            processStrLog = "<Fit - LM>";
+            processStrLog = processStrLog + newline + "Func: " + string(func2str(this.ModelFunction));
+
             % Perform fit.
             for i=1:size(data, 3)
                 scan = data(:,:,i);
@@ -175,6 +179,14 @@ classdef LevenbergMarquadtFitScanSet < squidlab.scanset.FitScanSet
             %
            % assignin('base', 'fitParams', this.FitParameters);
             %assignin('base', 'TempOrField', this.SelectedTemperatures);
+
+
+            % Record the processing history in the metadata.
+            if ~isfield(this.Meta, "History")
+                this.Meta.History = processStrLog;                
+            else
+                this.Meta.History(end + 1) = processStrLog;
+            end
         end
     end
     

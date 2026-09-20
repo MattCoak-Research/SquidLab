@@ -68,6 +68,12 @@ classdef BackgroundSubtractedScanSet < squidlab.scanset.ScanSet
            
            zPoints = this.DataScanSet.ScanData(:, 1, 1);
 
+           %Process string log
+           processStrLog = "<Background Subtract>";
+           processStrLog = processStrLog + newline + "Mode: " + string(this.InterpolationMode);
+           processStrLog = processStrLog + newline + "DataSet: " + string(this.DataScanSet.Name);
+           processStrLog = processStrLog + newline + "BackgroundSet: " + string(this.BackgroundScanSet.Name);
+
            %If in Nearest mode, need to make sure there are the same z
            %points - add a check to give a helpful error message if this is
            %not the case
@@ -85,6 +91,13 @@ classdef BackgroundSubtractedScanSet < squidlab.scanset.ScanSet
            
            this.ScanData = backsubData;
            this.Meta = this.DataScanSet.Meta;
+
+           % Record the processing history in the metadata.
+           if ~isfield(this.Meta, "History")
+               this.Meta.History = processStrLog;                
+           else
+               this.Meta.History(end + 1) = processStrLog;
+           end
        end
    end
     

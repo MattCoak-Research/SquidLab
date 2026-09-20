@@ -127,16 +127,10 @@ classdef ObjectInspector < handle
                 propertyName = this.PropertyList(i);
                 propertyValue = this.Object.(propertyName);
 
-                %No 'help' function in deployed code, handle this and
-                %branch the code here
-                if isdeployed
-                    %This could be improved..
-                    tooltipStrings(end+1,1) = strtrim((string(class(this.Object)) +  "." + propertyName));
-                else
-                    %#exclude help
-                    tooltipStrings(end+1,1) = strtrim(string(help(string(...
-                        class(this.Object)) +  "." + propertyName)));
-                end
+                  %Generate tooltip from metaclass Description data -
+                  %comments on the line above a property, formatted
+                  %correctly
+                  tooltipStrings(end+1,1) = iGetPropertyTooltip(this.Object, propertyName);
                 
                 y = containerHeight - i * (this.WidgetHeight + 2*this.Margin(2)) + this.Margin(2);
                 pos = [labelX + this.Margin(1) y labelWidth this.WidgetHeight];
@@ -182,6 +176,31 @@ classdef ObjectInspector < handle
         end
         
     end
+end
+
+function tooltipString = iGetPropertyTooltip(object, propertyName)
+%Get the tooltip for a property from the code comments, in a manner that
+%doesn't use help() and therefore can work in deployed code
+tooltipString = propertyName;
+
+mc = metaclass(object);
+propNames = string({mc.PropertyList.Name});
+idx = find(propNames == propertyName, 1);
+
+if ~isempty(idx)
+    desc = strtrim(string(mc.PropertyList(idx).Description));
+    det_desc = strtrim(string(mc.PropertyList(idx).DetailedDescription));
+    
+    if strlength(desc) > 0
+        tooltipString = string(propertyName) + newline + string(desc);
+
+        if strlength(det_desc) > 0
+            tooltipString = tooltipString + newline + newline + string(det_desc);
+        end
+    end
+
+
+end
 end
 
 function widget = iCreateWidgetByPropertyType(value, parent, position, tooltipString)

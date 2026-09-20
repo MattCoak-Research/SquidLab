@@ -65,7 +65,9 @@ Download and run one of the installers below. The MATLAB Runtime (which does not
 (Not currently implemented) - download and run. The installer will download and install the MATLAB Runtime automatically.
 
 #### No Runtime (standalone installer)
-Download the [standalone installer](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab.Installer.-.No.Runtime.exe
-) - download and run. The MATLAB Runtime must be installed on your computer for the programme to then launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
+Download the [standalone installer](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab.Installer.-.No.Runtime.exe) - download and run. The MATLAB Runtime must be installed on your computer for the programme to then launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
+
+#### Portable (no installer)
+Download the [standalone exectuable](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab.exe) - download and run to launch SquidLab, no installation or permissions required. The MATLAB Runtime must first be installed on your computer for the programme to launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
 
 - - - -

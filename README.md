@@ -61,13 +61,13 @@ To install, download the source code above, add to your MATLAB path then type 'S
 
 Download and run one of the installers below. The MATLAB Runtime (which does not require a paid MATLAB licence) is required to run the installed files, see below. Note that you will not be able to edit or extend the code in these versions.
 
-#### Runtime included (web installer)
-(Not currently implemented) - download and run. The installer will download and install the MATLAB Runtime automatically.
+#### Runtime included (web installer) - Reccommended
+Download the [web installer](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab_Installer-Runtime_Web_Installer.exe) - download and run. The installer will download and install the MATLAB Runtime automatically.
 
 #### No Runtime (standalone installer)
 Download the [standalone installer](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab_Installer-No_Runtime.exe) - download and run. The MATLAB Runtime must be installed on your computer for the programme to then launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
 
 #### Portable (no installer)
-Download the [standalone exectuable](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab.exe) - download and run to launch SquidLab, no installation or permissions required. The MATLAB Runtime must first be installed on your computer for the programme to launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
+Download the [standalone executable](https://github.com/MattCoak-Research/SquidLab/releases/latest/download/SquidLab.exe) - download and run to launch SquidLab, no installation or permissions required. The MATLAB Runtime must first be installed on your computer for the programme to launch, it can be downloaded from Mathworks [here](https://uk.mathworks.com/products/compiler/matlab-runtime.html)
 
 - - - -

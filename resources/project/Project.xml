@@ -55,9 +55,6 @@
         <File Location="splash.png">
             <Info/>
         </File>
-        <File Location="toolbox.ignore">
-            <Info/>
-        </File>
         <File Location="SquidLab">
             <Info/>
             <DIR_SIGNIFIER Location="1">
@@ -507,9 +504,6 @@
                     </Info>
                 </File>
             </File>
-            <File Location="toolbox.ignore">
-                <Info/>
-            </File>
             <File Location="SquidLab.mlapp">
                 <Info>
                     <Category UUID="FileClassCategory">
@@ -541,6 +535,9 @@
                 </File>
             </File>
             <File Location="SquidLabLogo.png">
+                <Info/>
+            </File>
+            <File Location="package.ignore">
                 <Info/>
             </File>
         </File>

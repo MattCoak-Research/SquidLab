@@ -6,9 +6,25 @@ end
 function packageTask(~)
 projectRoot = "";
 
-%Construct a toolbox options object to set parameters, and retrieve the
-%build version
-opts = matlab.addons.toolbox.ToolboxOptions("SquidLab.prj");
+%The toolbox can only contain files beneath its root folder, but Example
+%Data and Scripting Examples live in the project root, outside the SquidLab
+%source folder. So assemble everything in a staging folder (outside OneDrive,
+%whose syncing can lock files mid-package) and use that as the toolbox root.
+stageDir = fullfile(tempname, "SquidLab");
+mkdir(stageDir);
+copyfile(fullfile(projectRoot, "SquidLab"), stageDir);
+delete(fullfile(stageDir, "package.ignore"));
+delete(fullfile(stageDir, "*.asv"));
+copyfile(fullfile(projectRoot, "Example Data"), fullfile(stageDir, "Example Data"));
+copyfile(fullfile(projectRoot, "Scripting Examples"), fullfile(stageDir, "Scripting Examples"));
+copyfile(fullfile(projectRoot, "Academic-Use-Licence-Warwick-Cambridge-SquidLab-Nov2019.pdf"), stageDir);
+cleanup = onCleanup(@() rmdir(fileparts(stageDir), "s"));
+
+%Identifier kept the same as the original project so upgrades replace old installs
+opts = matlab.addons.toolbox.ToolboxOptions(stageDir, "6c7b1863-ab69-43c5-bc49-6e79813dcb0d");
+opts.ToolboxName = "SquidLab";
+opts.ToolboxImageFile = fullfile(stageDir, "SquidLabLogo.png");
+opts.ToolboxMatlabPath = [string(stageDir), fullfile(stageDir, "doc")];
 
 %Set various settings for the toolbox
 opts.AuthorCompany = "University of Birmingham";
@@ -22,8 +38,8 @@ opts.SupportedPlatforms.Win64 = true;
 opts.SupportedPlatforms.Mac = true;
 opts.SupportedPlatforms.Glnxa64 = true;
 opts.SupportedPlatforms.MatlabOnline = true;
-opts.ToolboxGettingStartedGuide = fullfile(projectRoot, "SquidLab", "doc", "SquidLabManual.mlx"); 
-opts.ToolboxVersion = "2.9.5";
+opts.ToolboxGettingStartedGuide = fullfile(stageDir, "doc", "SquidLabManual.mlx");
+opts.ToolboxVersion = "2.9.6";
 
 %Build the .mltbx toolbox installation file
 matlab.addons.toolbox.packageToolbox(opts);
@@ -52,6 +68,7 @@ function deployTask(~)
 projectRoot = ""; %Was full path: "E:\OneDrive\OneDrive - University of Birmingham\Physics\Matlab\Palladium DAQ";
 
 %Define, then clear (ready to write to) output directory
+appDir = fullfile(projectRoot);
 exeDir = fullfile(projectRoot, "Release", "Build");
 if exist(exeDir, "dir")
     rmdir(exeDir, "s");
@@ -64,7 +81,7 @@ if exist(packageDir, "dir")
 end
 
 %Retrieve version
-verString = "2.9.5";
+verString = "2.9.6";
 
 %Set build options
 buildOpts = AssembleBuildOptions(projectRoot);
@@ -84,14 +101,37 @@ end
 
 % Create package options object, set package properties and package.
 packageOpts = compiler.package.InstallerOptions(buildResult);
+packageOpts.AddRemoveProgramsIcon = fullfile(projectRoot, "SquidLab", "SquidLabLogo.png");
 packageOpts.ApplicationName = "SquidLab";
 packageOpts.AuthorName = "Matthew Coak";
 packageOpts.AuthorCompany = "University of Birmingham";
 packageOpts.InstallerIcon = fullfile(projectRoot, "SquidLab", "SquidLabLogo.png");
 packageOpts.InstallerSplash = "splash.png";
 packageOpts.OutputDir = packageDir;
+packageOpts.Description = "SquidLab - A user-friendly program for background subtraction and fitting of magnetization data (https://github.com/MattCoak-Research/SquidLab)";
 packageOpts.Version = verString;
 packageOpts.Verbose = true;
+packageOpts.InstallationNotes = "The manual can be found in the installation folder (Documentation), along with example data.";
+
+%Add files and folders bundled with the installer
+exampleDataDir = fullfile(exeDir, "Example Data");
+mkdir(exampleDataDir);
+copyfile(fullfile(appDir, "Example Data", "*.*"), exampleDataDir);
+
+%No point including scripting examples in exe, no MATLAB to script in!
+%scriptingExampleDir = fullfile(exeDir, "Scripting Examples");
+%mkdir(scriptingExampleDir);
+%copyfile(fullfile(appDir, "Scripting Examples", "*.m"), scriptingExampleDir);
+
+docDir = fullfile(exeDir, "Documentation");
+mkdir(docDir);
+copyfile(fullfile(appDir, "SquidLab", "doc", "*.pdf"), docDir);
+
+%List the files
+licenceFile = fullfile(appDir, "Academic-Use-Licence-Warwick-Cambridge-SquidLab-Nov2019.pdf");
+copyfile(licenceFile, exeDir);
+installFiles = [exampleDataDir, docDir, licenceFile];
+packageOpts.AdditionalFiles = cellstr(installFiles);
 
 %Create the installer files
 GenerateInstallers(packageOpts, buildResult);
@@ -165,7 +205,7 @@ end
 
 function buildOpts = AssembleBuildOptions(projectRoot)
 
-verString = "2.9.5";
+verString = "2.9.6";
 
 %The compiler excludes any code files it doesn't find an explicit mention
 %of. Add those in here. Instrument files and dynamically loaded Views are
